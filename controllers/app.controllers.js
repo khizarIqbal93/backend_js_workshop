@@ -16,6 +16,7 @@ exports.getCar = async (req, res, next) => {
 
 // POSTS
 exports.postCar = async (req, res, next) => {
+	console.log(req);
 	const request = req.body;
 	function newId() {
 		let len = db.length;
@@ -33,7 +34,7 @@ exports.postCar = async (req, res, next) => {
 	const newCar = { id, ...request };
 
 	db.push(newCar);
-	console.log(newCar);
+	// console.log(newCar);
 	res.status(201).send(newCar);
 };
 
